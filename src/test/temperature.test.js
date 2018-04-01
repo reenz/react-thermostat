@@ -18,6 +18,10 @@ describe("Temperature",() => {
   it("should render increased temperature",() => {
     wrapper.find("#increase").simulate("click");
     expect(wrapper.text()).toContain("21");
+  })
 
+  it("should render decreased temperature",() => {
+    wrapper.find("#decrease").simulate("click");
+    expect(wrapper.text()).toContain("19");
   })
 })
