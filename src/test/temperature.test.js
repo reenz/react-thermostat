@@ -7,8 +7,17 @@ configure( { adapter: new Adapter() });
 import Temperature from '../components/temperature'
 
 describe("Temperature",() => {
+  let wrapper;
+  beforeEach(() => {
+     wrapper = shallow(<Temperature />)  
+  })
   it("should render default temperature", () => {
-    const wrapper = shallow(<Temperature />)  
-    expect(wrapper.text()).toEqual("20");
+    expect(wrapper.text()).toContain("20");
+  })
+
+  it("should render increased temperature",() => {
+    wrapper.find("#increase").simulate("click");
+    expect(wrapper.text()).toContain("21");
+
   })
 })
