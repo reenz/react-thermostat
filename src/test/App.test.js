@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { configure, shallow } from 'enzyme';
-configure( { adapter: new Adapter() });
+import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16'
+configure( { adapter: new Adapter() });
 import App from '../App';
+
 
 describe("Heading",() => {
   it("should render 'thermostat'", () => {
