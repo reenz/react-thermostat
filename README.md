@@ -1,5 +1,7 @@
 # Thermostat
 
+This is a simple thermostat app with below specifications.I am building this app to learn React.
+
 ### Specification
 
 * [x] Thermostat starts at 20 degrees
@@ -17,3 +19,5 @@
 ### Technologies
 * React
 * Jest
+* Enzyme
+* Babel
