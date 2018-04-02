@@ -7,9 +7,15 @@ class Temperature extends Component {
     this.increaseTemperature = this
       .increaseTemperature
       .bind(this);
+
     this.decreaseTemperature = this
       .decreaseTemperature
       .bind(this);
+
+    this.handleChange = this
+      .handleChange
+      .bind(this);
+
     this.state = {
       msg: '',
       temperature: props.temperature || 20,
@@ -34,13 +40,27 @@ class Temperature extends Component {
     };
   }
 
+  handleChange(event) {
+    this.setState({
+      powerSaving: !this.state.powerSaving
+    })
+  }
+
   render() {
     return (
       <div>
-        <div>{this.state.temperature}</div> 
+        <div>{this.state.temperature}</div>
         <button id="increase" type="button" onClick={this.increaseTemperature}>Increase</button>
         <button id="decrease" type="button" onClick={this.decreaseTemperature}>Decrease</button>
         <div>{this.state.msg}</div>
+        <label>
+          On
+          <input id="powerSavingOn"
+            type="checkbox"
+            value="On"
+            checked={this.state.powerSaving}
+            onChange={this.handleChange}/>
+        </label>
       </div>
     )
   }

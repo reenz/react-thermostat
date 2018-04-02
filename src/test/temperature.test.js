@@ -28,10 +28,15 @@ describe("Temperature", () => {
     expect(wrapper.text()).toContain("19");
   });
 
-  it("should show warning -- temperature",() => {
+  it("should render msg with minimum temperature",() => {
     wrapper = shallow(<Temperature temperature={10} />)
     wrapper.find("#decrease").simulate("click");
     expect(wrapper.text()).toContain("Cannot decrease 10 is the minimum temperature");
   });
+
+  it("should have power saving mode checked by default",() => {
+    let checkbox = wrapper.find("#powerSavingOn");
+    expect(checkbox.props().checked).toEqual(true);  
+  })
 
 })

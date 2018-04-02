@@ -6,7 +6,7 @@
 * [x] You can increase the temperature with an up function
 * [x] You can decrease the temperature with a down function
 * [x] The minimum temperature is 10 degrees
-* [x] Flash message when user tries to decrease temperature below 10.
+* [x] Flash message when user tries to decrease temperature below 10
 * [ ] If power saving mode is on, the maximum temperature is 25 degrees
 * [ ] If power saving mode is off, the maximum temperature is 32 degrees
 * [ ] Power saving mode is on by default
