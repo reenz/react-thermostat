@@ -37,7 +37,7 @@ class Temperature extends Component {
   render() {
     return (
       <div>
-        {this.state.temperature}
+        <div>{this.state.temperature}</div> 
         <button id="increase" type="button" onClick={this.increaseTemperature}>Increase</button>
         <button id="decrease" type="button" onClick={this.decreaseTemperature}>Decrease</button>
         <div>{this.state.msg}</div>
