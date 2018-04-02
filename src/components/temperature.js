@@ -4,18 +4,7 @@ class Temperature extends Component {
 
   constructor(props) {
     super(props);
-    this.increaseTemperature = this
-      .increaseTemperature
-      .bind(this);
-
-    this.decreaseTemperature = this
-      .decreaseTemperature
-      .bind(this);
-
-    this.handleChange = this
-      .handleChange
-      .bind(this);
-
+   
     this.state = {
       msg: '',
       temperature: props.temperature || 20,
@@ -50,8 +39,8 @@ class Temperature extends Component {
     return (
       <div>
         <div>{this.state.temperature}</div>
-        <button id="increase" type="button" onClick={this.increaseTemperature}>Increase</button>
-        <button id="decrease" type="button" onClick={this.decreaseTemperature}>Decrease</button>
+        <button id="increase" type="button" onClick={this.increaseTemperature.bind(this)}>Increase</button>
+        <button id="decrease" type="button" onClick={this.decreaseTemperature.bind(this)}>Decrease</button>
         <div>{this.state.msg}</div>
         <label>
           On
@@ -59,7 +48,7 @@ class Temperature extends Component {
             type="checkbox"
             value="On"
             checked={this.state.powerSaving}
-            onChange={this.handleChange}/>
+            onChange={this.handleChange.bind(this)}/>
         </label>
       </div>
     )
