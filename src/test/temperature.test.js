@@ -39,4 +39,9 @@ describe("Temperature", () => {
     expect(checkbox.props().checked).toEqual(true);  
   })
 
+  it("should have power saving mode value as 'On' ",() => {
+    let checkbox = wrapper.find("#powerSavingOn");
+    expect(checkbox.props().value).toEqual("On");  
+  })
+
 })
