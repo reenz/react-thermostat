@@ -17,13 +17,22 @@ class Temperature extends Component {
 
   increaseTemperature() {
     const newTmp = this.state.temperature + 1;
+    const warningMsg = this.getWarningMsg();
     const maxTemperature = this.getMaxTemperature();
     if (newTmp > maxTemperature) {
-      this.setState({msg: "This is maximum temperature you can set when power save mode is on."});
+      this.setState({msg: warningMsg});
     } else {
       this.setState({temperature: newTmp, msg: ''});
     }
+  }
 
+  getWarningMsg() {
+    const maxTemperature = this.getMaxTemperature();
+    if (maxTemperature === this.state.powerSavingOnMaxTemperature) {
+      return "This is maximum temperature you can set when power save mode is on.";
+    } else {
+      return "This is the maximum temperature you can set.";
+    }
   }
 
   decreaseTemperature() {
@@ -38,12 +47,14 @@ class Temperature extends Component {
   handleChange(event) {
     this.setState({
       powerSaving: !this.state.powerSaving
-    })
+    });
   }
 
   getMaxTemperature() {
     if (this.state.powerSaving) {
       return this.state.temperature = this.state.powerSavingOnMaxTemperature;
+    } else {
+      return this.state.temperature = this.state.powerSavingOffMaxTemperature;
     }
   }
 
