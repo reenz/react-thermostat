@@ -44,4 +44,9 @@ describe("Temperature", () => {
     expect(checkbox.props().value).toEqual("On");  
   })
 
+  it("should render msg when user tries to increase temperature > 25 in power save mode",() => {
+    wrapper = shallow(<Temperature temperature={25} />)
+    wrapper.find("#increase").simulate("click");
+    expect(wrapper.text()).toContain("This is maximum temperature you can set when power save mode is on.");
+  })
 })
