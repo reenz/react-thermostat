@@ -52,9 +52,9 @@ class Temperature extends Component {
 
   getMaxTemperature() {
     if (this.state.powerSaving) {
-      return this.state.temperature = this.state.powerSavingOnMaxTemperature;
+      return this.state.powerSavingOnMaxTemperature
     } else {
-      return this.state.temperature = this.state.powerSavingOffMaxTemperature;
+      return this.state.powerSavingOffMaxTemperature
     }
   }
 
