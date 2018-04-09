@@ -9,7 +9,7 @@ This is a simple thermostat app with below specifications.I am building this app
 * [x] You can decrease the temperature with a down function
 * [x] The minimum temperature is 10 degrees
 * [x] Flash message when user tries to decrease temperature below 10
-* [ ] If power saving mode is on, the maximum temperature is 25 degrees
+* [x] If power saving mode is on, the maximum temperature is 25 degrees
 * [ ] If power saving mode is off, the maximum temperature is 32 degrees
 * [x] Power saving mode is on by default
 * [ ] You can reset the temperature to 20 with a reset function
