@@ -4,10 +4,10 @@ class Temperature extends Component {
 
   constructor(props) {
     super(props);
-
+    this.startTemperature = 20;
     this.state = {
       msg: '',
-      temperature: props.temperature || 20,
+      temperature: props.temperature || this.startTemperature,
       minTemperature: props.minTemperature || 10,
       powerSaving: true,
       powerSavingOnMaxTemperature: 25,
@@ -58,6 +58,10 @@ class Temperature extends Component {
     }
   }
 
+  reset() {
+    this.setState({temperature: this.startTemperature ,msg:''});
+  }
+
   render() {
     return (
       <div>
@@ -86,6 +90,12 @@ class Temperature extends Component {
             .handleChange
             .bind(this)}/>
         </label>
+        <button
+          id="reset"
+          type="button"
+          onClick={this
+          .reset
+          .bind(this)}>Reset</button>
       </div>
     )
   }

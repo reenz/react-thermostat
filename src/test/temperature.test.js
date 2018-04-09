@@ -56,4 +56,9 @@ describe("Temperature", () => {
     wrapper.find("#increase").simulate("click");
     expect(wrapper.text()).toContain("This is the maximum temperature you can set.");
   })
+
+  it("should reset to 20 on clicking reset",() => {
+    wrapper.find("#reset").simulate("click");
+    expect(wrapper.text()).toContain("20");
+  })
 })
