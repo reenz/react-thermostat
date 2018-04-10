@@ -1,8 +1,8 @@
-# Thermostat
+# Thermostat(WIP)
 
 This is a simple thermostat app with below specifications.I am building this app to learn React.
 
-### Specification
+## Specification
 
 * [x] Thermostat starts at 20 degrees
 * [x] You can increase the temperature with an up function
@@ -17,7 +17,15 @@ This is a simple thermostat app with below specifications.I am building this app
 * [ ] Low-usage will be indicated with green, medium-usage indicated with black, high-usage indicated with red.
 * [x] Add a server
 
+### How to use it
+
+* git clone "git@github.com:reenz/react-thermostat.git"
+* run npm install - to install all the dependencies
+* run npm start - to start the app and visit localhost:3000
+* run npm test - to run the tests
+
 ### Technologies
+
 * React
 * Jest
 * Enzyme
