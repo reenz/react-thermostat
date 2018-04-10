@@ -73,4 +73,10 @@ it("should tell the energy usage as medium for temperature less than 25",() => {
   wrapper.find("#energyUsage").simulate("click");
   expect(wrapper.text()).toContain("Medium Usage");
 })
+
+it("should tell the energy usage as high for temperature greater than equal to 25",() => {
+  wrapper = shallow(<Temperature temperature={30}/>)
+  wrapper.find("#energyUsage").simulate("click");
+  expect(wrapper.text()).toContain("High Usage");
+})
 })
