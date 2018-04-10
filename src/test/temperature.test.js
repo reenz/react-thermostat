@@ -61,4 +61,10 @@ describe("Temperature", () => {
     wrapper.find("#reset").simulate("click");
     expect(wrapper.text()).toContain("20");
   })
+
+it("should tell the energy usage as medium for temperature less than 18",() => {
+  wrapper = shallow(<Temperature temperature={15}/>)
+  wrapper.find("#energyUsage").simulate("click");
+  expect(wrapper.text()).toContain("Low Usage");
+})
 })

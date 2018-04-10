@@ -11,7 +11,9 @@ class Temperature extends Component {
       minTemperature: props.minTemperature || 10,
       powerSaving: true,
       powerSavingOnMaxTemperature: 25,
-      powerSavingOffMaxTemperature: 32
+      powerSavingOffMaxTemperature: 32,
+      lowEnergyUsageLimit: 18,
+      mediumEnergyUsageLimit: 25
     }
   }
 
@@ -59,7 +61,15 @@ class Temperature extends Component {
   }
 
   reset() {
-    this.setState({temperature: this.startTemperature ,msg:''});
+    this.setState({temperature: this.startTemperature, msg: ''});
+  }
+
+  energyUsage() {
+
+    if (this.state.temperature < this.state.lowEnergyUsageLimit) {
+      return this.setState({msg: "Low Usage"})
+    }
+  
   }
 
   render() {
@@ -96,6 +106,12 @@ class Temperature extends Component {
           onClick={this
           .reset
           .bind(this)}>Reset</button>
+        <button
+          id="energyUsage"
+          type="button"
+          onClick={this
+          .energyUsage
+          .bind(this)}>Check Usage</button>
       </div>
     )
   }
