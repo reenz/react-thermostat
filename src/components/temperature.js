@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './temperature.css'
 
 class Temperature extends Component {
 
@@ -82,8 +83,8 @@ class Temperature extends Component {
 
   render() {
     return (
-      <div>
-        <div>{this.state.temperature}</div>
+      <div className="thermostat" >
+        <div className="temperature" >{this.state.temperature}° </div>
         <button
           id="increase"
           type="button"
