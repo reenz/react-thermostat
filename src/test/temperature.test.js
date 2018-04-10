@@ -50,10 +50,12 @@ describe("Temperature", () => {
     expect(wrapper.text()).toContain("This is maximum temperature you can set when power save mode is on.");
   })
 
-  it("should render msg when user tries to increase temperature > 25 in power save mode",() => {
-    wrapper = shallow(<Temperature temperature={32} />)
+  it("should render msg when user tries to increase temperature > 32 when power save mode off",() => {
+    wrapper = shallow(<Temperature temperature={25} />);
     wrapper.find("#powerSavingOn").simulate("change");
-    wrapper.find("#increase").simulate("click");
+    for (let i = 0; i < 8; i++) {
+      wrapper.find("#increase").simulate("click");
+    }
     expect(wrapper.text()).toContain("This is the maximum temperature you can set.");
   })
 
@@ -62,21 +64,27 @@ describe("Temperature", () => {
     expect(wrapper.text()).toContain("20");
   })
 
-it("should tell the energy usage as low for temperature less than 18",() => {
-  wrapper = shallow(<Temperature temperature={15}/>)
-  wrapper.find("#energyUsage").simulate("click");
-  expect(wrapper.text()).toContain("Low Usage");
-})
+  it("should tell the energy usage as low for temperature less than 18",() => {
+    wrapper = shallow(<Temperature temperature={15}/>)
+    wrapper.find("#energyUsage").simulate("click");
+    expect(wrapper.text()).toContain("Low Usage");
+  })
 
-it("should tell the energy usage as medium for temperature less than 25",() => {
-  wrapper = shallow(<Temperature temperature={24}/>)
-  wrapper.find("#energyUsage").simulate("click");
-  expect(wrapper.text()).toContain("Medium Usage");
-})
+  it("should tell the energy usage as medium for temperature less than 25",() => {
+    wrapper = shallow(<Temperature temperature={24}/>)
+    wrapper.find("#energyUsage").simulate("click");
+    expect(wrapper.text()).toContain("Medium Usage");
+  })
 
-it("should tell the energy usage as high for temperature greater than equal to 25",() => {
-  wrapper = shallow(<Temperature temperature={30}/>)
-  wrapper.find("#energyUsage").simulate("click");
-  expect(wrapper.text()).toContain("High Usage");
-})
+  it("should tell the energy usage as high for temperature greater than equal to 25",() => {
+    wrapper = shallow(<Temperature temperature={30}/>)
+    wrapper.find("#energyUsage").simulate("click");
+    expect(wrapper.text()).toContain("High Usage");
+  })
+
+  it("should reset the temperature to 20 from 32 when power saving mode is switched on", () => {
+    wrapper = shallow(<Temperature temperature={27} />)
+    wrapper.find("#powerSavingOn").simulate("change");
+    expect(wrapper.text()).toContain("20");
+  })
 })

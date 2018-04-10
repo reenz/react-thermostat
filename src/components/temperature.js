@@ -47,9 +47,12 @@ class Temperature extends Component {
   }
 
   handleChange(event) {
-    this.setState({
-      powerSaving: !this.state.powerSaving
-    });
+    if (this.state.temperature <= this.state.powerSavingOnMaxTemperature) {
+      this.setState({ powerSaving: !this.state.powerSaving,temperature: this.state.temperature});
+    } else {
+      this.setState({powerSaving: !this.state.powerSaving, temperature: this.startTemperature, msg: ''
+      });
+    }
   }
 
   getMaxTemperature() {
