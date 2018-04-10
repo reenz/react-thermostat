@@ -69,6 +69,10 @@ class Temperature extends Component {
     if (this.state.temperature < this.state.lowEnergyUsageLimit) {
       return this.setState({msg: "Low Usage"})
     }
+    if (this.state.temperature < this.state.mediumEnergyUsageLimit) {
+      return this.setState({msg: "Medium Usage"})
+    }
+ 
   
   }
 
