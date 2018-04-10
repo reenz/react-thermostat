@@ -15,7 +15,7 @@ This is a simple thermostat app with below specifications.I am building this app
 * [x] You can reset the temperature to 20 with a reset function
 * [x] You can ask about the thermostat's current energy usage: < 18 is `low-usage`, < 25 is `medium-usage`, anything else is `high-usage`.
 * [ ] Low-usage will be indicated with green, medium-usage indicated with black, high-usage indicated with red.
-* [ ] Add a server
+* [x] Add a server
 
 ### Technologies
 * React
