@@ -21,10 +21,10 @@ This is a simple thermostat app with below specifications.I am building this app
 
 ### How to use it
 
-* git clone "git@github.com:reenz/react-thermostat.git"
-* run npm install - to install all the dependencies
-* run npm start - to start the app and visit localhost:3000
-* run npm test - to run the tests
+* git clone `git@github.com:reenz/react-thermostat.git`
+* run `npm install` - to install all the dependencies
+* run `npm start` - to start the app and visit localhost:3000
+* run `npm test` - to run the tests
 
 ### Technologies
 
@@ -32,3 +32,9 @@ This is a simple thermostat app with below specifications.I am building this app
 * Jest
 * Enzyme
 * Babel
+* Terraform
+
+### Building Infrastructure using Terraform
+* set environment variables `HEROKU_API_KEY` and `HEROKU_EMAIL`
+* `terraforn init` to initialize
+* and then `terraform apply` so that it scans the current directory for the configuration and applies the changes appropriately
