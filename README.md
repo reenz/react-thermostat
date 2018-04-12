@@ -17,6 +17,7 @@ This is a simple thermostat app with below specifications.I am building this app
 * [ ] Low-usage will be indicated with green, medium-usage indicated with black, high-usage indicated with red.
 * [x] Add a server
 * [x] Deploy to Heroku
+* [x] Infrastructure as code(Terraform) 
 
 ### How to use it
 
