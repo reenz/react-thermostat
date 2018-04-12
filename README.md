@@ -16,6 +16,7 @@ This is a simple thermostat app with below specifications.I am building this app
 * [x] You can ask about the thermostat's current energy usage: < 18 is `low-usage`, < 25 is `medium-usage`, anything else is `high-usage`.
 * [ ] Low-usage will be indicated with green, medium-usage indicated with black, high-usage indicated with red.
 * [x] Add a server
+* [x] Deploy to Heroku
 
 ### How to use it
 
