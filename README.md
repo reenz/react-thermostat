@@ -1,4 +1,6 @@
 # Thermostat(WIP)
+[![Build Status](https://travis-ci.org/reenz/react-thermostat.svg?branch=master)](https://travis-ci.org/reenz/react-thermostat)
+
 
 This is a simple thermostat app with below specifications.I am building this app to learn React.
 
